@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+***
+* Ruby 3.0.4
+* Rails 6.1.5.1
+***
+`bundle`
 
-Things you may want to cover:
+`bundle exec rails db:migrate`
 
-* Ruby version
+`bundle exec rails s`
+***
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Demo](https://myblogiavianm.herokuapp.com/)
