@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to post_url(@post), notice: "Post was successfully created."
+      redirect_to post_url(@post), notice: "Пост создан"
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_url(@post), notice: "Post was successfully updated."
+      redirect_to post_url(@post), notice: "Пост обновлен"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
 
-    redirect_to posts_url, notice: "Post was successfully destroyed."
+    redirect_to posts_url, notice: "Пост удален"
   end
 
   private
