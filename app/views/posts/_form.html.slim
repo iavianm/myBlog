@@ -1,0 +1,17 @@
+= form_for @post do |f|
+  - if @post.errors.any?
+    .alert.alert-danger.alert-dismissible[role="alert"]
+      #error_explanation
+        h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+        ul
+          - @post.errors.full_messages.each do |message|
+            li = message
+
+  .mb-3
+    = f.label :Заголовок
+    = f.text_field :title, class: 'form-control'
+  .mb-3
+    = f.label :Пост
+    = f.text_area :body, rows: 10, class: 'form-control'
+  .actions
+    = f.submit 'Отправить', class: 'btn btn-primary'

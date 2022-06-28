@@ -1,0 +1,17 @@
+p#notice = notice
+
+p.h2
+  = @post.title
+
+p
+  = @post.body
+
+.post-comments.buffer-top
+  = render partial: 'comments/form', locals: {comment: @new_comment || @post.comments.build}
+  .buffer-both
+    = render partial: 'comments/comment', collection: @post.comments.except(@new_comment)
+    p
+
+  => link_to "Редактировать", edit_post_path(@post), class: 'btn btn-success'
+  '|
+  =< link_to "Назад", posts_path, class: 'btn btn-secondary'

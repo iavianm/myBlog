@@ -1,0 +1,11 @@
+p
+  h3
+    = comment.body
+p
+  = comment.author
+  '
+  em
+    = l comment.created_at, format: :short
+    '
+    = link_to "Удалить", post_comment_path(comment.post, comment), data: {confirm: "Вы уверены?"}, method: :delete, class: 'btn btn-small btn-danger'
+
